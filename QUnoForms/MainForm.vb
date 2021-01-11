@@ -16,8 +16,7 @@ Public Class MainForm
     End Sub
 
     Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
-        'StartNewGame(My.Settings.DefaultHumanPlayerName, My.Settings.DefaultComputerPlayers)
-        StartNewGame("Player 1", 3)
+        StartNewGame(My.Settings.DefaultHumanPlayerName, My.Settings.DefaultComputerPlayers)
         SetNewGameUI()
         ToggleGameControlsUI()
         RefreshGameStatusUI()
@@ -121,8 +120,7 @@ Public Class MainForm
         For i = 1 To computerPlayerCount
             Dim computerPlayer As New Player
             With computerPlayer
-                '.Name = String.Format(My.Resources.PlayerNameTemplate, i + 1) ' Since the human is Player 1.
-                .Name = String.Format("Player {0}", i + 1) ' Since the human is Player 1.
+                .Name = String.Format(My.Resources.PlayerNameTemplate, i + 1) ' Since the human is Player 1.
                 .IsHuman = False
             End With
             CurrentGame.Players.Add(computerPlayer)
@@ -156,7 +154,7 @@ Public Class MainForm
             listHumanHand.Enabled = True
             buttonPlay.Enabled = True ' Set it to True, then rely on the selected item in the list to update it.
             buttonDraw.Enabled = True
-            labelStatus.Text = "Game in progress" 'My.Resources.StatusGameInProgress
+            labelStatus.Text = My.Resources.StatusGameInProgress
         Else
             listHumanHand.Enabled = False
             buttonPlay.Enabled = False
@@ -180,16 +178,14 @@ Public Class MainForm
 
         listComputerPlayers.Items.Clear()
         For Each player In CurrentGame.Players.Where(Function(p) Not p.IsHuman)
-            'listComputerPlayers.Items.Add(String.Format(My.Resources.ComputerPlayerNameAndStatus, player.Name, player.Hand.Cards.Count))
-            listComputerPlayers.Items.Add(String.Format("{0} has {1} cards left", player.Name, player.Hand.Cards.Count))
+            listComputerPlayers.Items.Add(String.Format(My.Resources.ComputerPlayerNameAndStatus, player.Name, player.Hand.Cards.Count))
         Next
 
         listHumanHand.Focus()
     End Sub
 
     Private Sub SetGameOverUI()
-        'labelStatus.Text = String.Format(My.Resources.StatusGameOver, FindWinner())
-        labelStatus.Text = String.Format("Game over! {0} is the winner.", FindWinner())
+        labelStatus.Text = String.Format(My.Resources.StatusGameOver, FindWinner())
     End Sub
 
     Private Sub PlayCardUI(selectedCard As Card)
@@ -212,14 +208,11 @@ Public Class MainForm
         Dim message As String = String.Empty
         Select Case mode
             Case LogMode.Play
-                'message = String.Format(My.Resources.LogMessagePlay, player.Name, card.ToString())
-                message = String.Format("{0} played {1}", player.Name, card.ToString())
+                message = String.Format(My.Resources.LogMessagePlay, player.Name, card.ToString())
             Case LogMode.WildPlay
-                'message = String.Format(My.Resources.LogMessageWildPlay, player.Name, card.Value.ToString(), wildColor.ToString())
-                message = String.Format("{0} played {1} and chose {2}", player.Name, card.Value.ToString(), wildColor.ToString())
+                message = String.Format(My.Resources.LogMessageWildPlay, player.Name, card.Value.ToString(), wildColor.ToString())
             Case LogMode.Draw
-                'message = String.Format(My.Resources.LogMessageDraw, player.Name)
-                message = String.Format("{0} drew a card", player.Name)
+                message = String.Format(My.Resources.LogMessageDraw, player.Name)
         End Select
         Log.Add(message)
         listGameLog.Items.Insert(0, message)

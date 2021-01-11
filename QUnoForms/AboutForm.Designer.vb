@@ -43,7 +43,7 @@ Partial Class AboutForm
         '
         'pictureIcon
         '
-        'Me.pictureIcon.Image = Global.Mooville.QUno.Forms.My.Resources.Resources.QUno
+        Me.pictureIcon.Image = Global.Mooville.QUno.Forms.My.Resources.Resources.QUno
         Me.pictureIcon.Location = New System.Drawing.Point(12, 12)
         Me.pictureIcon.Name = "pictureIcon"
         Me.pictureIcon.Size = New System.Drawing.Size(48, 48)
