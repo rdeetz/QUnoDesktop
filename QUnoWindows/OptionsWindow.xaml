@@ -1,0 +1,62 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Mooville.QUno.OptionsWindow"
+    Title="Options"
+    Width="320" Height="240"
+    ResizeMode="NoResize" ShowInTaskbar="False" SnapsToDevicePixels="True" WindowStartupLocation="CenterOwner">
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label 
+            Content="_Player name:" 
+            Target="{Binding ElementName=textDefaultHumanPlayerName}"
+            Grid.Row="0" Grid.Column="0"/>
+        <TextBox 
+            Name="textDefaultHumanPlayerName" 
+            Text="{Binding Path=DefaultHumanPlayerName}"
+            TabIndex="0"
+            Grid.Row="1" Grid.Column="0"/>
+        <Label 
+            Content="_Number of computer players:" 
+            Target="{Binding ElementName=sliderDefaultComputerPlayers}"
+            Grid.Row="2" Grid.Column="0"/>
+        <Slider 
+            Name="sliderDefaultComputerPlayers" 
+            Value="{Binding Path=DefaultComputerPlayers}"
+            ToolTip="{Binding Path=DefaultComputerPlayers}"
+            Minimum="{Binding Path=MinimumComputerPlayers}"
+            Maximum="{Binding Path=MaximumComputerPlayers}"
+            TabIndex="1"
+            Grid.Row="3" Grid.Column="0"/>
+        <CheckBox 
+            Content="Automatically check for _updates"
+            IsChecked="{Binding Path=AutoCheckForUpdates}"
+            Margin="0,8,0,0"
+            TabIndex="2"
+            Grid.Row="4" Grid.Column="0"/>
+        <StackPanel 
+            Orientation="Horizontal"
+            HorizontalAlignment="Right"
+            Grid.Row="5" Grid.Column="0">
+            <Button
+                Name="buttonOk"
+                Content="OK"
+                Width="75" Height="23"
+                Margin="0,0,8,0"
+                IsDefault="True"
+                TabIndex="3"/>
+            <Button
+                Content="Cancel"
+                Width="75" Height="23"
+                IsCancel="True"
+                TabIndex="4"/>
+        </StackPanel>
+    </Grid>
+</Window>
