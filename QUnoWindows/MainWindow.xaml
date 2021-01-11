@@ -1,0 +1,255 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Mooville.QUno"
+    xmlns:model="clr-namespace:Mooville.QUno.Model;assembly=QUnoLibrary"
+    xmlns:viewmodel="clr-namespace:Mooville.QUno.ViewModel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    x:Class="Mooville.QUno.MainWindow"
+    Title="QUno"
+    Width="800" Height="600" MinWidth="500" MinHeight="375"
+    ResizeMode="CanResizeWithGrip" SnapsToDevicePixels="True" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <viewmodel:DoNamesMatchConverter x:Key="DoNamesMatchConverter"/>
+    	<DataTemplate x:Key="CardTemplate" DataType="{x:Type model:Card}">
+    		<Border x:Name="panelCard" Width="48" Height="64" BorderBrush="Black" BorderThickness="1" CornerRadius="4" Background="White" Margin="8">
+    			<Grid>
+    				<Rectangle x:Name="rectangle" Margin="4" RadiusX="4" RadiusY="4" Fill="Black"/>
+    				<TextBlock x:Name="text" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+    			</Grid>
+    		</Border>
+    		<DataTemplate.Triggers>
+    			<DataTrigger Binding="{Binding Path=Color}" Value="Red">
+    				<Setter TargetName="rectangle" Property="Fill" Value="DarkRed"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Color}" Value="Blue">
+    				<Setter TargetName="rectangle" Property="Fill" Value="DarkBlue"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Color}" Value="Yellow">
+    				<Setter TargetName="rectangle" Property="Fill" Value="Gold"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Color}" Value="Green">
+    				<Setter TargetName="rectangle" Property="Fill" Value="DarkGreen"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Value}" Value="Zero">
+    				<Setter TargetName="text" Property="Text" Value="0"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Value}" Value="One">
+    				<Setter TargetName="text" Property="Text" Value="1"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Value}" Value="Two">
+    				<Setter TargetName="text" Property="Text" Value="2"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Value}" Value="Three">
+    				<Setter TargetName="text" Property="Text" Value="3"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Value}" Value="Four">
+    				<Setter TargetName="text" Property="Text" Value="4"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Value}" Value="Five">
+    				<Setter TargetName="text" Property="Text" Value="5"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Value}" Value="Six">
+    				<Setter TargetName="text" Property="Text" Value="6"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Value}" Value="Seven">
+    				<Setter TargetName="text" Property="Text" Value="7"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Value}" Value="Eight">
+    				<Setter TargetName="text" Property="Text" Value="8"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Value}" Value="Nine">
+    				<Setter TargetName="text" Property="Text" Value="9"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Value}" Value="DrawTwo">
+    				<Setter TargetName="text" Property="Text" Value="D2"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Value}" Value="Skip">
+    				<Setter TargetName="text" Property="Text" Value="S"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Value}" Value="Reverse">
+    				<Setter TargetName="text" Property="Text" Value="R"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Value}" Value="Wild">
+    				<Setter TargetName="text" Property="Text" Value="W"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=Value}" Value="WildDrawFour">
+    				<Setter TargetName="text" Property="Text" Value="WD4"/>
+    			</DataTrigger>
+    		</DataTemplate.Triggers>
+    	</DataTemplate>
+    	<DataTemplate x:Key="PlayerTemplate" DataType="{x:Type model:Player}">
+    		<Border x:Name="panelPlayer">
+    			<Grid Margin="8">
+    				<Grid.RowDefinitions>
+    					<RowDefinition/>
+    				</Grid.RowDefinitions>
+    				<Grid.ColumnDefinitions>
+    					<ColumnDefinition Width="Auto"/>
+    					<ColumnDefinition Width="*"/>
+    				</Grid.ColumnDefinitions>
+    				<Border Margin="0,0,8,0" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black">
+    					<Image Width="48" Height="48"/>
+    				</Border>
+    				<StackPanel Grid.Column="1">
+    					<TextBlock Text="{Binding Path=Name}" Margin="0,0,0,8" FontWeight="Bold" FontSize="16"/>
+    					<TextBlock Text="{Binding Path=Hand.Cards.Count, StringFormat=\{0\} cards left}"/>
+    				</StackPanel>
+    			</Grid>
+    		</Border>
+    		<DataTemplate.Triggers>
+    			<DataTrigger Value="True">
+    				<DataTrigger.Binding>
+    					<MultiBinding Converter="{StaticResource DoNamesMatchConverter}">
+    						<Binding Path="Name"/>
+    						<Binding Path="DataContext.CurrentPlayer.Name" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type Window}}"/>
+    					</MultiBinding>
+    				</DataTrigger.Binding>
+    				<Setter TargetName="panelPlayer" Property="Background" Value="Gainsboro"/>
+    			</DataTrigger>
+    		</DataTemplate.Triggers>
+    	</DataTemplate>
+        <DataTemplate x:Key="GameStatusTemplate" DataType="{x:Type viewmodel:MainViewModel}">
+            <Grid>
+            	<Grid.RowDefinitions>
+            		<RowDefinition Height="Auto"/>
+            		<RowDefinition Height="Auto"/>
+            	</Grid.RowDefinitions>
+            	<Grid.ColumnDefinitions>
+            		<ColumnDefinition Width="Auto"/>
+            		<ColumnDefinition Width="Auto"/>
+            	</Grid.ColumnDefinitions>
+                <ContentControl x:Name="card" Content="{Binding Path=CurrentCard}" ContentTemplate="{StaticResource CardTemplate}" IsTabStop="False" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2"/>
+                <TextBlock x:Name="clockwise" Margin="8" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1">Clockwise</TextBlock>
+                <TextBlock x:Name="counterClockwise" Margin="8" HorizontalAlignment="Left" Grid.Row="0" Grid.Column="1">Counterclockwise</TextBlock>
+                <Rectangle x:Name="rectangle" Width="64" Margin="8" Grid.Row="1" Grid.Column="1"/>
+            </Grid>
+            <DataTemplate.Triggers>
+    			<DataTrigger Binding="{Binding Path=CurrentWildColor}" Value="Red">
+    				<Setter TargetName="rectangle" Property="Fill" Value="DarkRed"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=CurrentWildColor}" Value="Blue">
+    				<Setter TargetName="rectangle" Property="Fill" Value="DarkBlue"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=CurrentWildColor}" Value="Yellow">
+    				<Setter TargetName="rectangle" Property="Fill" Value="Gold"/>
+    			</DataTrigger>
+    			<DataTrigger Binding="{Binding Path=CurrentWildColor}" Value="Green">
+    				<Setter TargetName="rectangle" Property="Fill" Value="DarkGreen"/>
+    			</DataTrigger>
+                <DataTrigger Binding="{Binding Path=CurrentDirection}" Value="Clockwise">
+                	<Setter TargetName="clockwise" Property="Visibility" Value="Visible"/>
+                    <Setter TargetName="counterClockwise" Property="Visibility" Value="Hidden"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=CurrentDirection}" Value="Counterclockwise">
+                	<Setter TargetName="clockwise" Property="Visibility" Value="Hidden"/>
+                    <Setter TargetName="counterClockwise" Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+    </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Game">
+                <MenuItem Header="_New" InputGestureText="Ctrl+N" Command="ApplicationCommands.New"/>
+                <MenuItem Header="_Open..." InputGestureText="Ctrl+O" Command="ApplicationCommands.Open"/>
+                <MenuItem Header="_Save..." InputGestureText="Ctrl+S" Command="ApplicationCommands.Save"/>
+                <Separator/>
+                <MenuItem Header="E_xit" Command="ApplicationCommands.Close"/>
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="_Options..." Command="local:QUnoCommands.Options"/>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="QUno _Help" InputGestureText="F1" Command="ApplicationCommands.Help"/>
+                <Separator/>
+                <MenuItem Header="Check for _Updates" Command="local:QUnoCommands.CheckForUpdates"/>
+                <Separator/>
+                <MenuItem Header="_About QUno" Command="local:QUnoCommands.About"/>
+            </MenuItem>
+        </Menu>
+        <StatusBar x:Name="statusBar" Height="22" DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock Text="{Binding Path=Title, FallbackValue=Ready}"/>
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right" Margin="0,0,12,0">
+                <ProgressBar Width="100" Height="12" IsIndeterminate="True" Visibility="{Binding Path=IsWorking, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}"/>
+            </StatusBarItem>
+        </StatusBar>
+        <Grid Margin="8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        	<DockPanel Grid.Row="0" Grid.Column="0">
+                <ItemsControl 
+                    ItemsSource="{Binding Path=ComputerPlayers}" 
+                    ItemTemplate="{StaticResource PlayerTemplate}" 
+                    MinHeight="64" 
+                    HorizontalAlignment="Center" 
+                    DockPanel.Dock="Top">
+        			<ItemsControl.ItemsPanel>
+        				<ItemsPanelTemplate>
+        					<WrapPanel/>
+        				</ItemsPanelTemplate>
+        			</ItemsControl.ItemsPanel>
+        		</ItemsControl>
+                <ContentControl 
+                    Content="{Binding}" 
+                    ContentTemplate="{StaticResource GameStatusTemplate}" 
+                    HorizontalAlignment="Center" 
+                    IsTabStop="False"
+                    DockPanel.Dock="Top"/>
+                <DockPanel IsEnabled="{Binding Path=IsGameInProgress}">
+        			<StackPanel Margin="8,0,0,0" DockPanel.Dock="Right">
+        				<ContentControl Content="{Binding Path=HumanPlayer}" ContentTemplate="{StaticResource PlayerTemplate}"/>
+        				<StackPanel Orientation="Horizontal" Visibility="{Binding Path=IsHuman, Converter={StaticResource BooleanToVisibilityConverter}}" Margin="0,8,0,0">
+                            <Button Content="_Play" Command="local:QUnoCommands.PlayCard" CommandParameter="{Binding Path=HumanPlayer.Hand.Cards.CurrentItem}" MinWidth="75" Margin="0,0,8,0" TabIndex="1"/>
+        					<Button Content="_Draw" Command="local:QUnoCommands.DrawCard" MinWidth="75" TabIndex="2"/>
+        				</StackPanel>
+        			</StackPanel>
+        			<ListBox 
+                        Name="listHumanHand"
+                        ItemsSource="{Binding Path=HumanPlayer.Hand.Cards}" 
+                        ItemTemplate="{StaticResource CardTemplate}" 
+                        IsSynchronizedWithCurrentItem="True" 
+                        TabIndex="0">
+        				<ListBox.ItemsPanel>
+        					<ItemsPanelTemplate>
+        						<WrapPanel/>
+        					</ItemsPanelTemplate>
+        				</ListBox.ItemsPanel>
+        			</ListBox>
+        		</DockPanel>
+        	</DockPanel>
+            <DockPanel Grid.Row="1" Grid.Column="0" Margin="0,8,0,0">
+                <Button Content="Take Turn" Command="local:QUnoCommands.TakeTurn" Visibility="Collapsed" MinWidth="75" Margin="0,0,0,8" HorizontalAlignment="Center" TabIndex="3" DockPanel.Dock="Top"/>
+                <ListBox ItemsSource="{Binding Path=Log}" IsSynchronizedWithCurrentItem="True" TabIndex="4">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Path=Index}" Margin="0,0,8,0"/>
+                                <TextBlock Text="{Binding Path=Message}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+            <DockPanel 
+                Visibility="{Binding Path=IsGameNotYetStarted, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}"
+                Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" 
+                Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+                <Button 
+                    Content="Start a _New Game"
+                    Command="ApplicationCommands.New"
+                    MinWidth="75"
+                    Padding="16"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </DockPanel>
+        </Grid>
+    </DockPanel>
+</Window>

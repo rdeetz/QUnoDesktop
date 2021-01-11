@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>Mooville.QUno.Windows</RootNamespace>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\QUno.ico</ApplicationIcon>
+    <Version>5.0.0</Version>
+    <Authors>Roger Deetz</Authors>
+    <Product>QUno</Product>
+    <Description>An Uno-like card game.</Description>
+    <Copyright>Copyright (c) 2021 Roger Deetz. All rights reserved.</Copyright>
+ </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="QUnoLibrary">
+      <HintPath>..\Library\Debug\QUnoLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>
