@@ -10,7 +10,7 @@ namespace Mooville.QUno.Windows
     using System.Reflection;
     using System.Windows;
     using System.Windows.Xps.Packaging;
-    using Mooville.QUno.Properties;
+    using Mooville.QUno.Windows.Properties;
 
     public partial class HelpWindow : Window
     {

@@ -5,7 +5,7 @@
 namespace Mooville.QUno.Windows
 {
     using System.Windows.Input;
-    using Mooville.QUno.Properties;
+    using Mooville.QUno.Windows.Properties;
 
     public static class QUnoCommands
     {

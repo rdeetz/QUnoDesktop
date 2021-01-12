@@ -12,7 +12,7 @@ namespace Mooville.QUno.Windows
     using System.Windows.Input;
     using Microsoft.Win32;
     using Mooville.QUno.Model;
-    using Mooville.QUno.Properties;
+    using Mooville.QUno.Windows.Properties;
     using Mooville.QUno.Windows.ViewModel;
 
     public partial class MainWindow : Window

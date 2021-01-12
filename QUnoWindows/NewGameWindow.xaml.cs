@@ -10,7 +10,7 @@ namespace Mooville.QUno.Windows
     using System.Windows;
     using System.Windows.Input;
     using Mooville.QUno.Model;
-    using Mooville.QUno.Properties;
+    using Mooville.QUno.Windows.Properties;
     using Mooville.QUno.Windows.ViewModel;
 
     public partial class NewGameWindow : Window

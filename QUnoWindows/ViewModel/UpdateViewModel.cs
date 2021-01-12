@@ -8,8 +8,8 @@ namespace Mooville.QUno.Windows.ViewModel
     using System.ComponentModel;
     using System.Reflection;
     using Mooville.Common.Updates;
-    using Mooville.QUno.Properties;
     using Mooville.QUno.ViewModel;
+    using Mooville.QUno.Windows.Properties;
 
     public class UpdateViewModel : ViewModelBase, IDisposable
     {

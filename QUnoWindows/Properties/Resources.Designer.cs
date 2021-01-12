@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Mooville.QUno.Properties {
+namespace Mooville.QUno.Windows.Properties {
     using System;
     
     

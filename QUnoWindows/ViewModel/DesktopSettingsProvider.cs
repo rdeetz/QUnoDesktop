@@ -5,8 +5,8 @@
 namespace Mooville.QUno.Windows.ViewModel
 {
     using System;
-    using Mooville.QUno.Properties;
     using Mooville.QUno.ViewModel;
+    using Mooville.QUno.Windows.Properties;
 
     public class DesktopSettingsProvider : ISettingsProvider
     {
