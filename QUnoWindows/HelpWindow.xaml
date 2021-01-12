@@ -1,7 +1,7 @@
 ﻿<Window
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    x:Class="Mooville.QUno.HelpWindow"
+    x:Class="Mooville.QUno.Windows.HelpWindow"
     Title="QUno Help"
     Width="500" Height="375" MinWidth="320" MinHeight="240"
     ResizeMode="CanResize" ShowInTaskbar="False" SnapsToDevicePixels="True">

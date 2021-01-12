@@ -2,12 +2,13 @@
 //   Copyright © 2018 Roger Deetz. All rights reserved.
 // </copyright>
 
-namespace Mooville.QUno.Model
+namespace Mooville.QUno.Windows.Model
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Xml.Linq;
+    using Mooville.QUno.Model;
 
     public class StandardGameSerializer : IGameSerializer
     {

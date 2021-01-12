@@ -2,11 +2,12 @@
 //   Copyright © 2018 Roger Deetz. All rights reserved.
 // </copyright>
 
-namespace Mooville.QUno
+namespace Mooville.QUno.Windows
 {
     using System.ComponentModel;
     using System.Windows;
     using Mooville.QUno.ViewModel;
+    using Mooville.QUno.Windows.ViewModel;
 
     public partial class OptionsWindow : Window
     {

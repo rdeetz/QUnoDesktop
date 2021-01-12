@@ -2,10 +2,11 @@
 //   Copyright © 2018 Roger Deetz. All rights reserved.
 // </copyright>
 
-namespace Mooville.QUno.ViewModel
+namespace Mooville.QUno.Windows.ViewModel
 {
     using System;
     using Mooville.QUno.Properties;
+    using Mooville.QUno.ViewModel;
 
     public class DesktopSettingsProvider : ISettingsProvider
     {

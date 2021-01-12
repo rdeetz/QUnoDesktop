@@ -2,7 +2,7 @@
 //   Copyright © 2010 Roger Deetz. All rights reserved.
 // </copyright>
 
-namespace Mooville.QUno
+namespace Mooville.QUno.Windows
 {
     using System.Windows;
 

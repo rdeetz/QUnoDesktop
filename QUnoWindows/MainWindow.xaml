@@ -1,11 +1,11 @@
 ﻿<Window
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:Mooville.QUno"
+    xmlns:local="clr-namespace:Mooville.QUno.Windows"
     xmlns:model="clr-namespace:Mooville.QUno.Model;assembly=QUnoLibrary"
-    xmlns:viewmodel="clr-namespace:Mooville.QUno.ViewModel"
+    xmlns:viewmodel="clr-namespace:Mooville.QUno.Windows.ViewModel"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
-    x:Class="Mooville.QUno.MainWindow"
+    x:Class="Mooville.QUno.Windows.MainWindow"
     Title="QUno"
     Width="800" Height="600" MinWidth="500" MinHeight="375"
     ResizeMode="CanResizeWithGrip" SnapsToDevicePixels="True" WindowStartupLocation="CenterScreen">

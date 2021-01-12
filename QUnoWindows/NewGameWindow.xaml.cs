@@ -2,7 +2,7 @@
 //   Copyright © 2018 Roger Deetz. All rights reserved.
 // </copyright>
 
-namespace Mooville.QUno
+namespace Mooville.QUno.Windows
 {
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -11,7 +11,7 @@ namespace Mooville.QUno
     using System.Windows.Input;
     using Mooville.QUno.Model;
     using Mooville.QUno.Properties;
-    using Mooville.QUno.ViewModel;
+    using Mooville.QUno.Windows.ViewModel;
 
     public partial class NewGameWindow : Window
     {

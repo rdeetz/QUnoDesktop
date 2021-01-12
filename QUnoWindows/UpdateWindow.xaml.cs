@@ -2,14 +2,14 @@
 //   Copyright © 2018 Roger Deetz. All rights reserved.
 // </copyright>
 
-namespace Mooville.QUno
+namespace Mooville.QUno.Windows
 {
     using System;
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Windows;
     using System.Windows.Input;
-    using Mooville.QUno.ViewModel;
+    using Mooville.QUno.Windows.ViewModel;
 
     public partial class UpdateWindow : Window, IDisposable
     {

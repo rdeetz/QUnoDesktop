@@ -2,7 +2,7 @@
 //   Copyright © 2018 Roger Deetz. All rights reserved.
 // </copyright>
 
-namespace Mooville.QUno
+namespace Mooville.QUno.Windows
 {
     using System;
     using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace Mooville.QUno
     using Microsoft.Win32;
     using Mooville.QUno.Model;
     using Mooville.QUno.Properties;
-    using Mooville.QUno.ViewModel;
+    using Mooville.QUno.Windows.ViewModel;
 
     public partial class MainWindow : Window
     {

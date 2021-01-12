@@ -2,7 +2,7 @@
 //   Copyright © 2018 Roger Deetz. All rights reserved.
 // </copyright>
 
-namespace Mooville.QUno.ViewModel
+namespace Mooville.QUno.Windows.ViewModel
 {
     using System;
     using System.Collections.Generic;
@@ -12,6 +12,8 @@ namespace Mooville.QUno.ViewModel
     using System.Windows.Data;
     using Mooville.QUno.Model;
     using Mooville.QUno.Properties;
+    using Mooville.QUno.ViewModel;
+    using Mooville.QUno.Windows.Model;
 
     public class MainViewModel : ViewModelBase
     {
