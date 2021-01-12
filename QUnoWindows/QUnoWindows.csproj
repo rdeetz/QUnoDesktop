@@ -36,9 +36,8 @@
     </Compile>
   </ItemGroup>
   
-  <!--
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
+    <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
@@ -48,6 +47,5 @@
       <DesignTime>True</DesignTime>
     </Compile>
   </ItemGroup>
-  -->
 
 </Project>

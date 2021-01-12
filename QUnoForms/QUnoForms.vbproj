@@ -60,9 +60,8 @@
     </Compile>
   </ItemGroup>
   
-  <!--
   <ItemGroup>
-    <EmbeddedResource Include="My Project\Resources.resx">
+    <EmbeddedResource Update="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
@@ -72,6 +71,5 @@
       <DesignTime>True</DesignTime>
     </Compile>
   </ItemGroup>
-  -->
 
 </Project>
