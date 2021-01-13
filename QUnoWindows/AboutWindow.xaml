@@ -16,24 +16,17 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Image
-            Source="/QUno;component/Resources/QUno48.png"
+            Source="/Resources/QUno48.png"
             HorizontalAlignment="Center" VerticalAlignment="Top"
             Stretch="None"
             Grid.Row="0" Grid.Column="0"/>
         <StackPanel Margin="8,0,0,8" Grid.Row="0" Grid.Column="1">
             <TextBlock Text="QUno" FontSize="18" FontWeight="Bold"/>
             <TextBlock Name="textVersion" Text="Version {0}"/>
-            <TextBlock>
-                <Hyperlink NavigateUri="http://quno.codeplex.com/">quno.codeplex.com</Hyperlink>
-            </TextBlock>
         </StackPanel>
         <StackPanel Margin="8,0,0,8" Grid.Row="1" Grid.Column="1">
             <TextBlock TextWrapping="Wrap">
-                Copyright © 2008-2010 <Hyperlink NavigateUri="http://www.mooville.com/">Roger Deetz</Hyperlink>. All rights reserved.
-            </TextBlock>
-            <TextBlock TextWrapping="Wrap">
-                This product is licensed under the 
-                <Hyperlink NavigateUri="http://quno.codeplex.com/license">New BSD License</Hyperlink>.
+                Copyright © 2008-2021 Roger Deetz. All rights reserved.
             </TextBlock>
         </StackPanel>
         <Button

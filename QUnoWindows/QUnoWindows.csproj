@@ -11,7 +11,7 @@
     <Authors>Roger Deetz</Authors>
     <Product>QUno</Product>
     <Description>An Uno-like card game.</Description>
-    <Copyright>Copyright (c) 2021 Roger Deetz. All rights reserved.</Copyright>
+    <Copyright>Copyright (c) 2008-2021 Roger Deetz. All rights reserved.</Copyright>
  </PropertyGroup>
 
   <ItemGroup>
