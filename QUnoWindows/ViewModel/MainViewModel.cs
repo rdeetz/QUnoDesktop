@@ -12,7 +12,6 @@ namespace Mooville.QUno.Windows.ViewModel
     using System.Windows.Data;
     using Mooville.QUno.Model;
     using Mooville.QUno.ViewModel;
-    using Mooville.QUno.Windows.Model;
     using Mooville.QUno.Windows.Properties;
 
     public class MainViewModel : ViewModelBase
