@@ -28,7 +28,7 @@
 
   <ItemGroup>
     <Reference Include="QUnoLibrary">
-      <HintPath>..\Library\Debug\QUnoLibrary.dll</HintPath>
+      <HintPath>..\Library\$(Configuration)\QUnoLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
 
