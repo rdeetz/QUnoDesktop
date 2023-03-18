@@ -4,10 +4,10 @@ An Uno-like card game.
 
 ## Requirements
 
-* Windows 10
-* [.NET 5 SDK](https://dotnet.microsoft.com/download)
+* Windows 11
+* [.NET 7 SDK](https://dotnet.microsoft.com/download)
 * Your favorite editor (my favorite editor is [Visual Studio Code](https://code.visualstudio.com/))
-* [Visual Studio 2019](https://visualstudio.microsoft.com/) (I use the Community edition, v16.8)
+* [Visual Studio 2022](https://visualstudio.microsoft.com/) (I use the Community edition, v17.5)
 
 ## How To Play
 
@@ -34,4 +34,4 @@ that lives in the [QUnoEngine](https://github.com/rdeetz/QUnoEngine) repository.
 Model-View-ViewModel pattern, attempting to take advantage of what XAML does best and let C# do the rest.
 
 The applications in this repository are intended to be run on any Windows operating system 
-that supports .NET 5 and the Desktop runtime.
+that supports .NET 7 and the Desktop runtime.
