@@ -5,7 +5,7 @@ An Uno-like card game.
 ## Requirements
 
 * Windows 11 or Windows 10
-* [.NET 7 SDK](https://dotnet.microsoft.com/download)
+* [.NET 8 SDK](https://dotnet.microsoft.com/download)
 * Your favorite editor (my favorite editor is [Visual Studio Code](https://code.visualstudio.com/))
 * [Visual Studio 2022](https://visualstudio.microsoft.com/) (I use the Community edition, v17)
 
