@@ -1,6 +1,8 @@
-﻿Imports Mooville.QUno.Model
+﻿Imports System.ComponentModel
+Imports Mooville.QUno.Model
 
 Public Class WildColorForm
+    <DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)>
     Public Property WildColor As Color
 
     Private Sub WildColorForm_Load(sender As Object, e As EventArgs) Handles Me.Load
