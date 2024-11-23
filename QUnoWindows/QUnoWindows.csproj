@@ -1,17 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <RootNamespace>Mooville.QUno.Windows</RootNamespace>
     <OutputType>WinExe</OutputType>
     <UseWPF>true</UseWPF>
     <StartupObject>Mooville.QUno.Windows.App</StartupObject>
     <ApplicationIcon>Resources\QUno.ico</ApplicationIcon>
     <Product>QUno</Product>
-    <Version>8.0.0</Version>
+    <Version>9.0.0</Version>
     <Authors>Roger Deetz</Authors>
     <Description>An Uno-like card game.</Description>
-    <Copyright>Copyright (c) 2008-2024 Roger Deetz. All rights reserved.</Copyright>
+    <Copyright>Copyright (c) 2008-2025 Roger Deetz. All rights reserved.</Copyright>
  </PropertyGroup>
 
   <ItemGroup>

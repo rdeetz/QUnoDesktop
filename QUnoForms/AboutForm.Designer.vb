@@ -77,7 +77,7 @@ Partial Class AboutForm
         Me.labelCopyright.Name = "labelCopyright"
         Me.labelCopyright.Size = New System.Drawing.Size(554, 32)
         Me.labelCopyright.TabIndex = 3
-        Me.labelCopyright.Text = "Copyright © 2019 Roger Deetz. All rights reserved."
+        Me.labelCopyright.Text = "Copyright © 2025 Roger Deetz. All rights reserved."
         '
         'AboutForm
         '
